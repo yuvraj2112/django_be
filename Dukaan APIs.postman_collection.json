@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "e2e95347-e5d4-4b6e-81ef-adac5a95035f",
+		"name": "Dukaan APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Seller - Create or Login to account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mobile\": \"9876092272\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/seller/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"seller",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Selle - Create new store",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Department Store\",\n    \"address\": \"12th Store on the right\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/seller/stores/7fbd8240-27e0-42a7-a67c-82776d39bf69",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"seller",
+						"stores",
+						"7fbd8240-27e0-42a7-a67c-82776d39bf69"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seller - Create and add Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Ringsay",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "mrp",
+							"value": "2000",
+							"type": "text"
+						},
+						{
+							"key": "sale_price",
+							"value": "2000",
+							"type": "text"
+						},
+						{
+							"key": "count",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "Jewellery",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/i328437/Downloads/IMG-20150912-WA0004.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/seller/product/7fbd8240-27e0-42a7-a67c-82776d39bf69",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"seller",
+						"product",
+						"7fbd8240-27e0-42a7-a67c-82776d39bf69"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buyer - Create or Login to account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mobile\": \"9876092272\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/buyer/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"buyer",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buyer - Add item to existing cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/buyer/cart/813684d5-e595-420a-8b7d-b9930987600b",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"buyer",
+						"cart",
+						"813684d5-e595-420a-8b7d-b9930987600b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buyer - Add item to new cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/buyer/cart",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"buyer",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buyer - Delete item from cart",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/buyer/cart/813684d5-e595-420a-8b7d-b9930987600b",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"buyer",
+						"cart",
+						"813684d5-e595-420a-8b7d-b9930987600b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buyer - Place an order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"link\": \"/7fbd8240-27e0-42a7-a67c-82776d39bf69/store/fd6b6a39-68b7-49dd-9921-2034deed3ca9\",\n    \"cart_id\": \"813684d5-e595-420a-8b7d-b9930987600b\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/buyer/order/f6fab8bc-5273-4313-af25-ada1af787a6a",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"buyer",
+						"order",
+						"f6fab8bc-5273-4313-af25-ada1af787a6a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buyer - Get store details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/buyer/store?link=/7fbd8240-27e0-42a7-a67c-82776d39bf69/store/fd6b6a39-68b7-49dd-9921-2034deed3ca9",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"buyer",
+						"store"
+					],
+					"query": [
+						{
+							"key": "link",
+							"value": "/7fbd8240-27e0-42a7-a67c-82776d39bf69/store/fd6b6a39-68b7-49dd-9921-2034deed3ca9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buyer - Get product catalog",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"ShrreRan\",\n    \"address\": \"kshjansjdn, 12, 23, Cnatt\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/buyer/products?link=/7fbd8240-27e0-42a7-a67c-82776d39bf69/store/fd6b6a39-68b7-49dd-9921-2034deed3ca9",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"buyer",
+						"products"
+					],
+					"query": [
+						{
+							"key": "link",
+							"value": "/7fbd8240-27e0-42a7-a67c-82776d39bf69/store/fd6b6a39-68b7-49dd-9921-2034deed3ca9"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
