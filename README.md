@@ -18,3 +18,4 @@ Docker should be installed in the system
 10. python manage.py makemigrations buyer
 11. python manage.py migrate
 12. python manage.py runserver
+13. Now you may go ahead and use the 'Postman API collection' or start making API calls as you see fit!
